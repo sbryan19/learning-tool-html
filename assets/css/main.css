@@ -1509,6 +1509,7 @@ button,
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  word-break: break-all;
   white-space: nowrap; }
   input[type="submit"]:hover,
   input[type="reset"]:hover,
