@@ -175,53 +175,75 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
+				
 				function openRoadmapModal() {
-				  document.getElementById('roadmapModal').style.display = 'block';
-				}
-				function closeRoadmapModal() {
-				  document.getElementById('roadmapModal').style.display = 'none';
-				  document.getElementById('generatedRoadmap').innerHTML = '';
-				  document.getElementById('skillInput').value = '';
-				}
+  const modal = document.getElementById('roadmapModal');
+  modal.style.display = 'flex';
+}
+
+function closeRoadmapModal() {
+  const modal = document.getElementById('roadmapModal');
+  modal.style.display = 'none';
+  document.getElementById('generatedRoadmap').innerHTML = '';
+  document.getElementById('skillInput').value = '';
+}
+
 			  
 				function generateRoadmap() {
-				  const skill = document.getElementById('skillInput').value.trim();
-				  const output = document.getElementById('generatedRoadmap');
-				  if (!skill) {
-					output.innerHTML = '<p style="color:red;">Please enter a skill name!</p>';
-					return;
-				  }
-			  
-				  // Fake roadmap data generator
-				  const courses = [
-					{ title: `${skill} Fundamentals`, status: 'Not Started' },
-					{ title: `Intermediate ${skill} Applications`, status: 'Locked' },
-					{ title: `Advanced ${skill} Projects`, status: 'Locked' }
-				  ];
-			  
-				  let roadmapHTML = `<h3>${skill} Roadmap</h3><ul>`;
-				  courses.forEach(c => {
-					roadmapHTML += `<li>${c.title} – ${c.status}</li>`;
-				  });
-				  roadmapHTML += `</ul><button class='button primary small' onclick='addRoadmap("${skill}")'>Add to My Roadmaps</button>`;
-			  
-				  output.innerHTML = roadmapHTML;
-				}
-			  
-				function addRoadmap(skill) {
-				  const roadmapList = document.getElementById('roadmapList');
-				  const newRoadmap = document.createElement('div');
-				  newRoadmap.classList.add('box');
-				  newRoadmap.innerHTML = `
-					<h3>${skill} Roadmap</h3>
-					<ul>
-					  <li>${skill} Fundamentals ✅</li>
-					  <li>Intermediate ${skill} Applications 🚧</li>
-					  <li>Advanced ${skill} Projects ⏳</li>
-					</ul>`;
-				  roadmapList.appendChild(newRoadmap);
-				  closeRoadmapModal();
-				}
+  const skill = document.getElementById('skillInput').value.trim();
+  const output = document.getElementById('generatedRoadmap');
+  if (!skill) {
+    output.innerHTML = '<p style="color:red;">Please enter a skill name!</p>';
+    return;
+  }
+
+  const courses = [
+    { title: `${skill} Fundamentals`, status: 'Not Started' },
+    { title: `Intermediate ${skill} Applications`, status: 'Locked' },
+    { title: `Advanced ${skill} Projects`, status: 'Locked' }
+  ];
+
+  let roadmapHTML = `
+    <h3>${skill} Roadmap</h3>
+    <div class="roadmap-container">
+      ${courses.map(c => `
+        <div class="roadmap-step ${c.status.toLowerCase().replace(' ', '-')}">
+          <div class="roadmap-step-title">${c.title}</div>
+          <div class="roadmap-step-status">${c.status}</div>
+        </div>
+      `).join('')}
+    </div>
+    <button class='button primary small' onclick='addRoadmap("${skill}")'>Add to My Roadmaps</button>
+  `;
+
+  output.innerHTML = roadmapHTML;
+}
+
+function addRoadmap(skill) {
+  const roadmapList = document.getElementById('roadmapList');
+  const newRoadmap = document.createElement('div');
+  newRoadmap.classList.add('box');
+  newRoadmap.innerHTML = `
+    <h3>${skill} Roadmap</h3>
+    <div class="roadmap-container">
+      <div class="roadmap-step completed">
+        <div class="roadmap-step-title"><a href="content.html">${skill} Fundamentals</a></div>
+        <div class="roadmap-step-status">Completed</div>
+      </div>
+      <div class="roadmap-step in-progress">
+        <div class="roadmap-step-title"><a href="content.html">Intermediate ${skill} Applications</a></div>
+        <div class="roadmap-step-status">In Progress</div>
+      </div>
+      <div class="roadmap-step upcoming">
+        <div class="roadmap-step-title"><a href="content.html">Advanced ${skill} Projects</a></div>
+        <div class="roadmap-step-status">Upcoming</div>
+      </div>
+    </div>
+  `;
+  roadmapList.appendChild(newRoadmap);
+  closeRoadmapModal();
+}
+
 			  </script>
 	</body>
 </html>
