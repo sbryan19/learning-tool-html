@@ -2313,6 +2313,7 @@ button,
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
+  text-transform: capitalize;
 }
 
 /* Each step card */
@@ -2371,4 +2372,23 @@ button,
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+  z-index: 999;
+}
+
+.modal .box {
+  background: white;
+  padding: 2em;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+}
+
 

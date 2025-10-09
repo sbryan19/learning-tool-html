@@ -32,110 +32,143 @@
 									</ul>
 								</header>
 
-			<!-- Content -->
-<section>
-	<header class="main">
-	  <h1>My Learning Journey</h1>
-	</header>
-  
-	<!-- Roadmap Creation Button -->
-	<div class="actions">
-	  <button class="button primary" onclick="openRoadmapModal()">+ Create Roadmap</button>
-	</div>
-  
-	<!-- Current Courses -->
-	<hr class="major" />
-	<h2>Current Courses</h2>
-	<div class="table-wrapper">
-	  <table class="alt">
-		<thead>
-		  <tr>
-			<th>Course</th>
-			<th>Progress</th>
-			<th>Status</th>
-			<th>Due Date</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-			<td>AI for Public Safety</td>
-			<td>60%</td>
-			<td>In Progress</td>
-			<td>25 Oct 2025</td>
-		  </tr>
-		  <tr>
-			<td>IoT Networking for Logistics</td>
-			<td>45%</td>
-			<td>In Progress</td>
-			<td>15 Nov 2025</td>
-		  </tr>
-		</tbody>
-	  </table>
-	</div>
-  
-	<!-- Completed Courses -->
-	<hr class="major" />
-	<h2>Completed Courses</h2>
-	<ul>
-	  <li><strong>Data Analytics Fundamentals</strong> – Completed Aug 2025</li>
-	  <li><strong>Cybersecurity Awareness for Officers</strong> – Completed July 2025</li>
-	  <li><strong>Machine Learning 101</strong> – Completed May 2025</li>
-	</ul>
-  
-	<!-- Upcoming Events -->
-	<hr class="major" />
-	<h2>Upcoming Learning Events</h2>
-	<div class="row gtr-50 gtr-uniform">
-	  <div class="col-4 col-12-medium">
-		<div class="box">
-		  <h3>AI Symposium 2025</h3>
-		  <p>1–3 Nov 2025, HTX HQ Auditorium</p>
-		  <p><em>Explore next-gen AI trends and ethics.</em></p>
-		</div>
-	  </div>
-	  <div class="col-4 col-12-medium">
-		<div class="box">
-		  <h3>IoT Security Bootcamp</h3>
-		  <p>10–12 Nov 2025, Fusionopolis</p>
-		  <p><em>Hands-on session to secure IoT networks.</em></p>
-		</div>
-	  </div>
-	  <div class="col-4 col-12-medium">
-		<div class="box">
-		  <h3>CloudOps Masterclass</h3>
-		  <p>5 Dec 2025, Online</p>
-		  <p><em>Advanced management of hybrid cloud systems.</em></p>
-		</div>
-	  </div>
-	</div>
-  
-	<!-- Roadmaps -->
-	<hr class="major" />
-	<h2>My Learning Roadmaps</h2>
-	<div id="roadmapList">
-	  <div class="box">
-		<h3>Data Science Specialist Roadmap</h3>
-		<ul>
-		  <li>Python for Data Analysis ✅</li>
-		  <li>Machine Learning 101 ✅</li>
-		  <li>Advanced ML Deployment 🚧</li>
-		</ul>
-	  </div>
-	</div>
-  
-	<!-- Modal for creating roadmap -->
-	<div id="roadmapModal" class="modal" style="display:none;">
-	  <div class="box">
-		<h2>Create Your Learning Roadmap</h2>
-		<p>Enter a skill or competency you’d like to learn:</p>
-		<input type="text" id="skillInput" placeholder="e.g., Cloud Security" />
-		<br /><br />
-		<button class="button primary" onclick="generateRoadmap()">Generate Roadmap</button>
-		<button class="button" onclick="closeRoadmapModal()">Cancel</button>
-		<div id="generatedRoadmap" style="margin-top:20px;"></div>
-	  </div>
-	</div>
-  </section>
+											<!-- Content -->
+								<section>
+									<header class="main">
+									<h1>My Learning Journey</h1>
+									</header>
+								
+									<!-- Roadmap Creation Button -->
+									 <div style="display: flex; gap: 5px;">
+									<div class="actions">
+									<button class="button primary" onclick="openRoadmapModal()">+ Create Roadmap</button>
+									</div>
+
+									<div class="actions" style="margin-bottom: 1em;">
+									<button class="button primary" onclick="openAddCourseModal()">+ Add Your Own Course</button>
+									</div>
+
+									 </div>
+								
+									<!-- Current Courses -->
+									<hr class="major" />
+									<h2>Current Courses</h2>
+									<div class="table-wrapper">
+									<table class="alt">
+										<thead>
+										<tr>
+											<th>Course</th>
+											<th>Progress</th>
+											<th>Status</th>
+											<th>Due Date</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td>AI for Public Safety</td>
+											<td>60%</td>
+											<td>In Progress</td>
+											<td>25 Oct 2025</td>
+										</tr>
+										<tr>
+											<td>IoT Networking for Logistics</td>
+											<td>45%</td>
+											<td>In Progress</td>
+											<td>15 Nov 2025</td>
+										</tr>
+										</tbody>
+									</table>
+									</div>
+								
+									<!-- Completed Courses -->
+									<hr class="major" />
+									<h2>Completed Courses</h2>
+									<ul>
+									<li><strong>Data Analytics Fundamentals</strong> – Completed Aug 2025</li>
+									<li><strong>Cybersecurity Awareness for Officers</strong> – Completed July 2025</li>
+									<li><strong>Machine Learning 101</strong> – Completed May 2025</li>
+									</ul>
+								
+									<!-- Upcoming Events -->
+									<hr class="major" />
+									<h2>Upcoming Learning Events</h2>
+									<div class="row gtr-50 gtr-uniform">
+									<div class="col-4 col-12-medium">
+										<div class="box">
+										<h3>AI Symposium 2025</h3>
+										<p>1–3 Nov 2025, HTX HQ Auditorium</p>
+										<p><em>Explore next-gen AI trends and ethics.</em></p>
+										</div>
+									</div>
+									<div class="col-4 col-12-medium">
+										<div class="box">
+										<h3>IoT Security Bootcamp</h3>
+										<p>10–12 Nov 2025, Fusionopolis</p>
+										<p><em>Hands-on session to secure IoT networks.</em></p>
+										</div>
+									</div>
+									<div class="col-4 col-12-medium">
+										<div class="box">
+										<h3>CloudOps Masterclass</h3>
+										<p>5 Dec 2025, Online</p>
+										<p><em>Advanced management of hybrid cloud systems.</em></p>
+										</div>
+									</div>
+									</div>
+								
+									<!-- Roadmaps -->
+									<hr class="major" />
+									<h2>My Learning Roadmaps</h2>
+									<div id="roadmapList">
+									<div class="box">
+										<h3>Data Science Specialist Roadmap</h3>
+										<ul>
+										<li>Python for Data Analysis ✅</li>
+										<li>Machine Learning 101 ✅</li>
+										<li>Advanced ML Deployment 🚧</li>
+										</ul>
+									</div>
+									</div>
+								
+									<!-- Modal for creating roadmap -->
+									<div id="roadmapModal" class="modal" style="display:none;">
+									<div class="box">
+										<h2>Create Your Learning Roadmap</h2>
+										<p>Enter a skill or competency you’d like to learn:</p>
+										<input type="text" id="skillInput" placeholder="e.g., Cloud Security" />
+
+										<br /><br />
+										<p>Select a course structure:</p>
+										<select id="structureSelect">
+										<option value="">-- Select structure --</option>
+										<option value="Online">Online</option>
+										<option value="Modular">Modular</option>
+										<option value="In-Person">In-Person</option>
+										<option value="Hybrid">Hybrid</option>
+										</select>
+
+										<br /><br />
+										<button class="button primary" onclick="generateRoadmap()">Generate Roadmap</button>
+										<button class="button" onclick="closeRoadmapModal()">Cancel</button>
+										<div id="generatedRoadmap" style="margin-top:20px;"></div>
+									</div>
+									</div>
+
+									<div id="addCourseModal" class="modal" style="display:none;">
+									<div class="box">
+										<h2>Add a Course</h2>
+										<p>Add a course you’ve attended externally (e.g., Coursera, internal training, etc.)</p>
+										<input type="text" id="courseName" placeholder="Course Name" style="width:100%; margin-bottom:10px;" />
+										<input type="text" id="courseSource" placeholder="Source (e.g. Coursera, NTU, Internal)" style="width:100%; margin-bottom:10px;" />
+										<input type="text" id="courseSkill" placeholder="Skill Gained" style="width:100%; margin-bottom:10px;" />
+										<input type="text" id="courseLink" placeholder="Optional link (e.g. course page)" style="width:100%; margin-bottom:10px;" />
+										<br />
+										<button class="button primary" onclick="addCourseToTable()">Add Course</button>
+										<button class="button" onclick="closeAddCourseModal()">Cancel</button>
+									</div>
+									</div>
+
+								</section>
 
 						</div>
 					</div>
@@ -191,9 +224,15 @@ function closeRoadmapModal() {
 			  
 				function generateRoadmap() {
   const skill = document.getElementById('skillInput').value.trim();
+  const structure = document.getElementById('structureSelect').value;
   const output = document.getElementById('generatedRoadmap');
+
   if (!skill) {
     output.innerHTML = '<p style="color:red;">Please enter a skill name!</p>';
+    return;
+  }
+  if (!structure) {
+    output.innerHTML = '<p style="color:red;">Please select a course structure!</p>';
     return;
   }
 
@@ -205,6 +244,7 @@ function closeRoadmapModal() {
 
   let roadmapHTML = `
     <h3>${skill} Roadmap</h3>
+    <p><strong>Structure:</strong> ${structure}</p>
     <div class="roadmap-container">
       ${courses.map(c => `
         <div class="roadmap-step ${c.status.toLowerCase().replace(' ', '-')}">
@@ -213,18 +253,20 @@ function closeRoadmapModal() {
         </div>
       `).join('')}
     </div>
-    <button class='button primary small' onclick='addRoadmap("${skill}")'>Add to My Roadmaps</button>
+    <button class='button primary small' onclick='addRoadmap("${skill}", "${structure}")'>Add to My Roadmaps</button>
   `;
 
   output.innerHTML = roadmapHTML;
 }
 
-function addRoadmap(skill) {
+
+function addRoadmap(skill, structure) {
   const roadmapList = document.getElementById('roadmapList');
   const newRoadmap = document.createElement('div');
   newRoadmap.classList.add('box');
   newRoadmap.innerHTML = `
     <h3>${skill} Roadmap</h3>
+    <p><strong>Structure:</strong> ${structure}</p>
     <div class="roadmap-container">
       <div class="roadmap-step completed">
         <div class="roadmap-step-title"><a href="content.html">${skill} Fundamentals</a></div>
@@ -243,6 +285,53 @@ function addRoadmap(skill) {
   roadmapList.appendChild(newRoadmap);
   closeRoadmapModal();
 }
+
+// Modal Controls
+function openAddCourseModal() {
+  document.getElementById('addCourseModal').style.display = 'flex';
+}
+
+function closeAddCourseModal() {
+  document.getElementById('addCourseModal').style.display = 'none';
+  document.getElementById('courseName').value = '';
+  document.getElementById('courseSource').value = '';
+  document.getElementById('courseSkill').value = '';
+  document.getElementById('courseLink').value = '';
+}
+
+// Add Course Row
+function addCourseToTable() {
+  const name = document.getElementById('courseName').value.trim();
+  const source = document.getElementById('courseSource').value.trim();
+  const skill = document.getElementById('courseSkill').value.trim();
+  const link = document.getElementById('courseLink').value.trim();
+
+  if (!name || !source || !skill) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  const table = document.querySelector('table tbody');
+  if (!table) {
+    alert("Table not found.");
+    return;
+  }
+
+  const rowCount = table.rows.length + 1;
+
+  const newRow = document.createElement('tr');
+  newRow.innerHTML = `
+    <td>${name}</td>
+    <td>0%</td>
+    <td>In-progress</td>
+    <td>16 Nov 2025</td>
+  `;
+
+  table.appendChild(newRow);
+  closeAddCourseModal();
+}
+
+
 
 			  </script>
 	</body>
